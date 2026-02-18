@@ -1,4 +1,4 @@
-import ProblemCard from "../components/ProblemCard";
+import ProblemCard from "../extras/ProblemCard";
 
 /**
  * Render out the list of numbers
@@ -15,7 +15,9 @@ export const RenderNumbers = () => {
       question='Render each number as: "Number: X".'
       dataPreview={numbers}
     >
-      <div></div>
+      {numbers.map((number) => (
+        <div>Number: {number}</div>
+      ))}
     </ProblemCard>
   );
 };

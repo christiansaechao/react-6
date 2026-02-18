@@ -5,6 +5,10 @@ import ProblemCard from "../extras/ProblemCard";
 export const CountItems = () => {
   const items = ["a", "b", "c", "d", 12];
 
+  const count = items.reduce((acc: number, curr) => {
+    return acc + 1;
+  }, 0);
+
   return (
     <ProblemCard
       title="Reduce 02 — Count items"
@@ -12,6 +16,7 @@ export const CountItems = () => {
       question="Use reduce() to count how many items are in the array (without using .length)."
       dataPreview={items}
     >
+      {count}
     </ProblemCard>
   );
 };

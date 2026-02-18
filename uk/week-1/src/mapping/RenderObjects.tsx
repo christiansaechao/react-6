@@ -1,4 +1,4 @@
-import ProblemCard from "../components/ProblemCard";
+import ProblemCard from "../extras/ProblemCard";
 
 export const RenderObjects = () => {
   const users = [{ name: "Alice" }, { name: "Bob" }];
@@ -8,6 +8,10 @@ export const RenderObjects = () => {
       method="map"
       question="Render each user's name in a <p>."
       dataPreview={users}
-    ></ProblemCard>
+    >
+      {users.map((user) => (
+        <p key={user.name}>{user.name}</p>
+      ))}
+    </ProblemCard>
   );
 };

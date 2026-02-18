@@ -1,4 +1,4 @@
-import ProblemCard from "../components/ProblemCard";
+import ProblemCard from "../extras/ProblemCard";
 
 import React from "react";
 
@@ -14,6 +14,7 @@ export const FullNames = () => {
       question="Render full names by combining firstName + lastName."
       dataPreview={people}
     >
+      test
     </ProblemCard>
   );
 };

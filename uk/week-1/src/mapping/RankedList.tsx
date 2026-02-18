@@ -1,4 +1,4 @@
-import ProblemCard from "../components/ProblemCard";
+import ProblemCard from "../extras/ProblemCard";
 
 export const RankedList = () => {
   const items = ["Learn JS", "Practice map()", "Build UI"];
@@ -8,7 +8,7 @@ export const RankedList = () => {
       method="map"
       question="Render a ranked list: 1. item, 2. item, etc."
       dataPreview={items}
-    >
+    >Test
     </ProblemCard>
   );
 };

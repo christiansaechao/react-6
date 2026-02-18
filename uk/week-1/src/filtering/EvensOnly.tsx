@@ -1,5 +1,5 @@
 // nums.filter(() => conditional) => [num, num].map(() => <div></div>)
-import ProblemCard from "../components/ProblemCard";
+import ProblemCard from "../extras/ProblemCard";
 export const EvensOnly = () => {
   const nums = [1, 2, 3, 4, 5];
 
@@ -9,6 +9,8 @@ export const EvensOnly = () => {
       method="filter"
       question="Filter the array to only even numbers, then render them."
       dataPreview={nums}
-    ></ProblemCard>
+    >
+      {nums.filter((n) => n % 2 == 0)}
+    </ProblemCard>
   );
 };

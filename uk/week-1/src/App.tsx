@@ -1,5 +1,5 @@
 import "./App.css";
-import { Button } from "./components/Button";
+// import { Button } from "./components/Button";
 
 /**
  * 1. Create your component
@@ -13,12 +13,15 @@ import { Button } from "./components/Button";
  * 1. FirstName, LastName, Age | Props passed down
  */
 
+import { CountItems, CartTotal, GroupUsers } from "./reducing";
+
 function App() {
+  const isComplete = true;
+
   return (
-    <>
-      <Button text="button 1" variant="outline" />
-      <Button text="button 2" variant="transparent" />
-    </>
+    <div className="text-black bg-slate-300">
+      {isComplete ? <CountItems /> : <CartTotal />}
+    </div>
   );
 }
 
