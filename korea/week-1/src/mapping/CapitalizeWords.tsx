@@ -12,13 +12,6 @@ export const CapitalizeWords = () => {
     >
 
       {/* write code here */}
-      {animals.map(animal => {
-        const firstLetter = animal.charAt(0).toUpperCase();
-        const restOfAnimal = animal.slice(1);
-        
-        return <div style={{textTransform: "capitalize"}}>{firstLetter + restOfAnimal}</div>
-      }
-      )}
     </ProblemCard>
   );
 };

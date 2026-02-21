@@ -9,7 +9,6 @@ export const RenderObjects = () => {
       question="Render each user's name in a <p>."
       dataPreview={users}
     >
-      {users.map((user)=><p>{user.name}</p>)}
     </ProblemCard>
   );
 };

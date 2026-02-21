@@ -16,13 +16,6 @@ export const MultipleConditions = () => {
       question="Render users who are active AND age > 18."
       dataPreview={users}
     >
-      {users
-        .filter((user) => user.active && user.age > 18)
-        .map((user) => (
-          <p>
-            {user.name} {user.age}
-          </p>
-        ))}
     </ProblemCard>
   );
 };

@@ -18,7 +18,6 @@ export const AdminsOnly = () => {
       question="Render only the admins."
       dataPreview={users}
     >
-      {admins.map((x) => x.name)}
     </ProblemCard>
   );
 };

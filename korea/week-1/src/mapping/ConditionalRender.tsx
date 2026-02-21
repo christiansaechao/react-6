@@ -22,9 +22,6 @@ export const ConditionalRender = () => {
       question='Render each user with a status: "🟢 Online" or "⚪ Offline".'
       dataPreview={users}
     >
-    {users.map((user) => {
-      return <div>{user.name} {user.isOnline ? "🟢 Online" : "⚪ Offline"}</div>
-    })}
     </ProblemCard> 
   );
 };

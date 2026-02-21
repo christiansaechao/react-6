@@ -19,11 +19,6 @@ export const PriceGreaterThan20 = () => {
       question="Render products with price > 20."
       dataPreview={products}
     >
-      {filterItem.map((item) => (
-        <div>
-          {item.name}, {item.price}
-        </div>
-      ))}
     </ProblemCard>
   );
 };
