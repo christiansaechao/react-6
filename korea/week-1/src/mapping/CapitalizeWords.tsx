@@ -1,7 +1,7 @@
 import ProblemCard from "../extras/ProblemCard";
 
 export const CapitalizeWords = () => {
-  const animals = ["dog", "cat", "bird"];
+  const animals = ["dog", "cat", "bird"]
 
   return (
     <ProblemCard
