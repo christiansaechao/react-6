@@ -1,4 +1,4 @@
-import React from "react";
+import { useState, useEffect } from "react";
 
 /**
  * Goal: Sync state with external storage.
@@ -9,5 +9,27 @@ import React from "react";
  */
 
 export const LocalStorage = () => {
-  return <div></div>;
+  const [username, setUsername] = useState(() => localStorage.getItem("username"));
+
+  useEffect(() => {
+    localStorage.setItem("username", username || "");
+  }, [username]);
+
+  useEffect(() => {
+    (async () => {
+      const name = await localStorage.getItem("username");
+      setUsername(name);
+    })();
+  }, []);
+
+  return (
+    <div>
+      {username}
+      <input
+        onChange={(e) => setUsername(e.target.value)}
+        type="text"
+        placeholder="set user name"
+      />
+    </div>
+  );
 };

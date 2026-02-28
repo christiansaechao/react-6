@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 
 export const Example = () => {
   /**
@@ -8,13 +8,30 @@ export const Example = () => {
         - Timers/intervals
         - Reading/writing localStorage
    */
+  const [windowSize, setWindowSize] = useState({
+    width: window.innerWidth,
+    height: window.innerHeight,
+  });
+
+  useEffect(() => {
+    console.log("mounting");
+    const handleResize = () => {
+      setWindowSize({
+        width: window.innerWidth,
+        height: window.innerHeight,
+      });
+    };
+
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
 
   // 1. empty dependency array []
   // 2. some value in dependency array [name]
   // 3. no dependency runs on every render
 
-  return (
-    <div>
-    </div>
-  );
+  return <div>{windowSize.width}</div>;
 };

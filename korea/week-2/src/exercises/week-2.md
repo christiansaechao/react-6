@@ -34,7 +34,8 @@
 
 3. **Team Dashboard**  
    - Tabs: Overview / Members / Settings  
-   - Members: list + delete/promote toggle  
-   - Settings: Dark mode toggle  
+   - Members: list + delete/promote toggle
+   - Settings: Dark mode toggle
+   - Sign Up / Login -> local storage 
 
 ---

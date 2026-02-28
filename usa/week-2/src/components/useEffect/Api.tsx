@@ -1,4 +1,6 @@
 import { useEffect, useState } from "react";
+import { useFetchData } from "../../hooks/useFetchData";
+import { useDebounce } from "../../hooks/useDebounce";
 
 // https://randomuser.me/api/?results=10
 
@@ -11,5 +13,34 @@ import { useEffect, useState } from "react";
  */
 
 export const Api = () => {
-  return <></>;
+  const { loading, data, error, setName, getData, name } = useFetchData();
+
+  const debouncedValue = useDebounce(name, 3000);
+
+  useEffect(() => {
+    if (debouncedValue) {
+      getData();
+    }
+  }, [getData, debouncedValue]);
+
+  if (loading) {
+    return <div>{"loading... " + loading}</div>;
+  }
+
+  if (error) {
+    return <div></div>;
+  }
+
+  return (
+    <>
+      <div>{data}</div>
+      <input
+        value={name}
+        onChange={(e) => setName(e.target.value)}
+        type="text"
+        placeholder="pokemon name here"
+      />
+      {/* <button onClick={getData}>fetch</button> */}
+    </>
+  );
 };

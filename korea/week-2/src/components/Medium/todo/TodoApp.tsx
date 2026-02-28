@@ -43,7 +43,7 @@ export const TodoApp = () => {
   const [tasks, setTasks] = useState<string[]>(["test1", "test2", "test3"]);
   const [input, setInput] = useState<string>("");
 
-  function deleteTask(taskToDelete: string) {
+  function deleteTask(taskToDelete: number) {
     const filteredItems = tasks.filter((task) => task !== taskToDelete);
     setTasks(filteredItems);
   }
